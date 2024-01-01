@@ -56,7 +56,7 @@ public class calc {
                     String num2 = tf2.getText();
                     Integer first = Integer.parseInt(num);
                     Integer second = Integer.parseInt(num2);
-                    int total = 0;
+                    double total = 0;
                     if (op.equals(add)) {
                         total = first + second;
                     } else if (op.equals(subtract)) {
@@ -64,9 +64,9 @@ public class calc {
                     } else if (op.equals(multiply)) {
                         total = first * second;
                     } else if (op.equals(divide)) {
-                        total = first / second;
+                        total = 1.0 * first / second;
                     }
-                    JOptionPane.showMessageDialog(frame, "The truncated total is: " + total);
+                    JOptionPane.showMessageDialog(frame, "The total is: " + total);
                 }
             });
         }
