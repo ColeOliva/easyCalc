@@ -45,53 +45,30 @@ public class calc {
         frame.getContentPane().add(BorderLayout.AFTER_LAST_LINE, panel3);
         frame.setVisible(true);
 
-        
-        add.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                String num = tf.getText();
-                String num2 = tf2.getText();
-                Integer first = Integer.parseInt(num);
-                Integer second = Integer.parseInt(num2);
-                int total = first + second;
-                JOptionPane.showMessageDialog(frame, "The total is: " + total);
-            }
-        });
+        JButton[] operation = new JButton[]{add, subtract, multiply, divide};
 
-        subtract.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                String num = tf.getText();
-                String num2 = tf2.getText();
-                Integer first = Integer.parseInt(num);
-                Integer second = Integer.parseInt(num2);
-                int total = first - second;
-                JOptionPane.showMessageDialog(frame, "The total is: " + total);
-            }
-        });
-
-        multiply.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                String num = tf.getText();
-                String num2 = tf2.getText();
-                Integer first = Integer.parseInt(num);
-                Integer second = Integer.parseInt(num2);
-                int total = first * second;
-                JOptionPane.showMessageDialog(frame, "The total is: " + total);
-            }
-        });
-
-        divide.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                String num = tf.getText();
-                String num2 = tf2.getText();
-                Integer first = Integer.parseInt(num);
-                Integer second = Integer.parseInt(num2);
-                int total = first / second;
-                JOptionPane.showMessageDialog(frame, "The truncated total is: " + total);
-            }
-        });
+        for (int i = 0; i < operation.length; i++) {
+            JButton op = operation[i];
+            op.addActionListener(new java.awt.event.ActionListener() {
+                @Override
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    String num = tf.getText();
+                    String num2 = tf2.getText();
+                    Integer first = Integer.parseInt(num);
+                    Integer second = Integer.parseInt(num2);
+                    int total = 0;
+                    if (op.equals(add)) {
+                        total = first + second;
+                    } else if (op.equals(subtract)) {
+                        total = first - second;
+                    } else if (op.equals(multiply)) {
+                        total = first * second;
+                    } else if (op.equals(divide)) {
+                        total = first / second;
+                    }
+                    JOptionPane.showMessageDialog(frame, "The truncated total is: " + total);
+                }
+            });
+        }
     }
 }
