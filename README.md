@@ -1,3 +1,3 @@
 # easyCalc
-trying this thing out fr
-gonna see if I remember how to use this thing.
+A first project. A simple calculator using JSwing. Definitely not optimized, 
+just a guinea pig for future projects.
